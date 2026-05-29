@@ -168,7 +168,7 @@ async function runTests() {
     mockClient.get = async (url: string, config: any) => {
       if (url.includes('/search')) {
         // Trigger 500 internal server error to force auto-fallback
-        throw new Error('500 Internal Server Error (Elasticsearch is down)');
+        throw new Error('500 Internal Server Error (Online search API is disabled)');
       }
       if (url.includes('/repository/archive.zip')) {
         zipFetched = true;

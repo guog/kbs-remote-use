@@ -116,7 +116,7 @@ export abstract class BaseConnector {
 *   **方案 A (本地文件同步)**：每次拉取远端文件同步到本地临时目录。
     *   *劣势*：严重违反“零物理文件落地”的安全红线。
 *   **方案 B (实时在线 API，无 Fallback)**：完全依赖远端的全文搜索 API。
-    *   *劣势*：若企业 GitLab 没配置 Elasticsearch 导致 HTTP 500/403，系统将彻底瘫痪。
+    *   *劣势*：若企业 GitLab 禁用了在线全文搜索 API 导致 HTTP 500/403，系统将彻底瘫痪。
 
 ## 5. 潜在影响与向下兼容性 (Compatibility & Drawbacks)
 *   **向下兼容性**：支持从 `.env` 中读取单源 GitLab 配置，自动转换为单源 Connector 运行，对现有配置完全兼容。
