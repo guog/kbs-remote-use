@@ -1,0 +1,35 @@
+{
+  "name": "kbs-remote-use",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --packages=external",
+    "start": "node dist/index.js",
+    "test": "esbuild test/test_runner.ts --bundle --platform=node --format=esm --outfile=dist/test_runner.js --packages=external && node dist/test_runner.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.1.2",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "adm-zip": "^0.5.17",
+    "axios": "^1.16.1",
+    "dotenv": "^17.4.2",
+    "fuse.js": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/adm-zip": "^0.5.8",
+    "@types/node": "^25.9.1",
+    "esbuild": "^0.28.0",
+    "typescript": "^6.0.3"
+  }
+}
